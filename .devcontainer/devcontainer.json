@@ -2,7 +2,7 @@
   "name": "Android Development",
   "image": "mcr.microsoft.com/devcontainers/java:17",
   "features": {},
-  "postCreateCommand": "export ANDROID_HOME=/usr/local/android-sdk && mkdir -p $ANDROID_HOME && wget https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip -O /tmp/cmdline-tools.zip && unzip /tmp/cmdline-tools.zip -d /tmp/cmdline-tools && mv /tmp/cmdline-tools/cmdline-tools/ $ANDROID_HOME/cmdline-tools && yes | $ANDROID_HOME/cmdline-tools/bin/sdkmanager --licenses && $ANDROID_HOME/cmdline-tools/bin/sdkmanager 'platform-tools' 'platforms;android-34' 'system-images;android-34;google_apis;x86_64' && echo 'export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/bin' >> ~/.bashrc",
+  "postCreateCommand": "export ANDROID_HOME=/usr/local/android-sdk && mkdir -p $ANDROID_HOME/cmdline-tools/latest && wget https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip -O /tmp/cmdline-tools.zip && unzip /tmp/cmdline-tools.zip -d $ANDROID_HOME/cmdline-tools/latest && yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses && $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager 'platform-tools' 'platforms;android-34' 'system-images;android-34;google_apis;x86_64' 'emulator' --channel=0 && echo 'export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator' >> ~/.bashrc",
   "containerEnv": {
     "ANDROID_HOME": "/usr/local/android-sdk"
   },
