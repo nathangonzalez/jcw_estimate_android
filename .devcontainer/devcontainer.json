@@ -1,0 +1,33 @@
+{
+  "name": "Android Development with Codespaces",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17"
+    },
+    "ghcr.io/eap-dev/devcontainer-features/android-sdk:1": {
+      "platforms": "34"
+    }
+  },
+  "postCreateCommand": "sdkmanager 'system-images;android-34;google_apis_playstore;x86_64' && yes | sdkmanager --licenses",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.java",
+        "vscjava.vscode-java-test",
+        "vscjava.vscode-java-debug",
+        "ms-dotnettools.csdevkit",
+        "es-es.dev-container"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "5555": {
+      "label": "Android Emulator",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "forwardPorts": [
+    5555
+  ]
+}
