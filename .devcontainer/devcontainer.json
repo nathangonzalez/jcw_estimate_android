@@ -1,15 +1,11 @@
 {
-  "name": "Android Development with Codespaces",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "17"
-    },
-    "ghcr.io/eap-dev/devcontainer-features/android-sdk:1": {
-      "platforms": "34"
-    }
+  "name": "Android Development",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "features": {},
+  "postCreateCommand": "export ANDROID_HOME=/usr/local/android-sdk && mkdir -p $ANDROID_HOME && wget https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip -O /tmp/cmdline-tools.zip && unzip /tmp/cmdline-tools.zip -d /tmp/cmdline-tools && mv /tmp/cmdline-tools/cmdline-tools/ $ANDROID_HOME/cmdline-tools && yes | $ANDROID_HOME/cmdline-tools/bin/sdkmanager --licenses && $ANDROID_HOME/cmdline-tools/bin/sdkmanager 'platform-tools' 'platforms;android-34' 'system-images;android-34;google_apis;x86_64' && echo 'export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/bin' >> ~/.bashrc",
+  "containerEnv": {
+    "ANDROID_HOME": "/usr/local/android-sdk"
   },
-  "postCreateCommand": "sdkmanager 'system-images;android-34;google_apis_playstore;x86_64' && yes | sdkmanager --licenses",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -21,13 +17,11 @@
       ]
     }
   },
+  "forwardPorts": [5555],
   "portsAttributes": {
     "5555": {
       "label": "Android Emulator",
       "onAutoForward": "openBrowser"
     }
-  },
-  "forwardPorts": [
-    5555
-  ]
+  }
 }
