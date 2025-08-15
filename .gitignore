@@ -3,3 +3,22 @@
 .gradle/
 gradle-8.8/
 gradle-8.8-bin.zip
+# Android/Gradle
+.gradle/
+local.properties
+*.keystore
+*.jks
+
+# SDK / tools / zips
+cmdline.zip
+android-sdk/
+*.zip
+
+# Build outputs
+app/build/
+build/
+
+# OS/IDE
+.DS_Store
+*.iml
+.idea/

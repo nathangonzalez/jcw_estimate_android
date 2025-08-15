@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "387621096218",
+    "project_id": "jwc-estimate-android",
+    "storage_bucket": "jwc-estimate-android.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387621096218:android:92c4a565201a039733faa3",
+        "android_client_info": {
+          "package_name": "com.example.estimator_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTLyPmYNJrgNrrm39wKxK8vXsAo1oDEkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
