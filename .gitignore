@@ -1,0 +1,5 @@
+
+# local gradle bootstrap
+.gradle/
+gradle-8.8/
+gradle-8.8-bin.zip
